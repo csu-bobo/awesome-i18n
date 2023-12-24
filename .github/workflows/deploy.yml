@@ -41,15 +41,15 @@ jobs:
           node-version: 20
           cache: npm # or pnpm / yarn
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v2
+      # - name: Setup Pages
+      #   uses: actions/configure-pages@v2
 
       - name: Install dependencies
         run: npm install # or pnpm install / yarn install
 
       - name: Build with VitePress
         run: npm run build # or pnpm docs:build / yarn docs:build
-        
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
