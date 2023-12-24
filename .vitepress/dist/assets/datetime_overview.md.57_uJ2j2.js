@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as a}from"./chunks/framework.NcfuTIUp.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"datetime/overview.md","filePath":"datetime/overview.md"}'),r={name:"datetime/overview.md"};function o(i,s,c,n,d,m){return t(),a("div")}const v=e(r,[["render",o]]);export{_ as __pageData,v as default};
