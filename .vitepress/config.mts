@@ -2,9 +2,9 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "i18n-awesome",
+  title: "awesome-i18n",
   description: "awesome",
-  base: '/i18n-awesome/',
+  base: '/awesome-i18n/',
 
   themeConfig: {
      // 启用内置搜索框
