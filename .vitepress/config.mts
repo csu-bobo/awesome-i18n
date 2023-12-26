@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "i18n-awesome",
   description: "awesome",
-  // base: '/repo/',
+  base: '/i18n-awesome/',
 
   themeConfig: {
      // 启用内置搜索框
