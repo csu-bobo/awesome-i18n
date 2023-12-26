@@ -48,7 +48,9 @@ jobs:
         run: npm install # or pnpm install / yarn install
 
       - name: Build with VitePress
-        run: npm run build # or pnpm docs:build / yarn docs:build
+        run: 
+          npm run build # or pnpm docs:build / yarn docs:build
+          touch .vitepress/dist/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
@@ -56,17 +58,17 @@ jobs:
           path: .vitepress/dist
 
       # 部署到GitHub Pages - 也就是将打包内容发布到GitHub Pages
-      - name: Deploy
-        # 使用别人写好的 actions去部署（将打包文件部署到指定分支上）
-        uses: JamesIves/github-pages-deploy-action@v4.3.3
-        # 自定义环境变量
-        with:
-          # 指定仓库：你要发布的仓库路径名
-          repository-name: csu-bobo/awesome-i18n
-          # 部署到 deploy-pages 分支，也就是部署后提交到那个分支
-          branch: gh-pages
-          # 填写打包好的目录名称路径，本项目配置在根目录
-          folder: docs
+      # - name: Deploy
+      #   # 使用别人写好的 actions去部署（将打包文件部署到指定分支上）
+      #   uses: JamesIves/github-pages-deploy-action@v4.3.3
+      #   # 自定义环境变量
+      #   with:
+      #     # 指定仓库：你要发布的仓库路径名
+      #     repository-name: csu-bobo/awesome-i18n
+      #     # 部署到 deploy-pages 分支，也就是部署后提交到那个分支
+      #     branch: gh-pages
+      #     # 填写打包好的目录名称路径，本项目配置在根目录
+      #     folder: docs
 
       # - name: Deploy to GitHub Pages
       #   uses: peaceiris/actions-gh-pages@v3
@@ -74,14 +76,14 @@ jobs:
       #     deploy_key: ${{ secrets.GITHUB_TOKEN }}
       #     publish_dir: docs/.vitepress/dist # 指定构建输出目录
   
-  # deploy:
-  #   environment:
-  #     name: github-pages
-  #     url: ${{ steps.deployment.outputs.page_url }}
-  #   needs: build
-  #   runs-on: ubuntu-latest
-  #   name: Deploy
-  #   steps:
-  #     - name: Deploy to GitHub Pages
-  #       id: deployment
-  #       uses: actions/deploy-pages@v2
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
