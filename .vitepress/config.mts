@@ -11,19 +11,22 @@ export default defineConfig({
      search: {
       provider: 'local'
     },
+    //网站的标题
+    siteTitle: 'awesome-i18n',
+    // 页面右侧显示的标题级别
+    outline:[1, 3],
 
     //首页最上边的导航栏
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
-      { text: '货币', link: '/currency/overview' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: '货币', link: '/currency/basic' },
+      { text: '时间', link: '/datetime/basic' },
     ],
 
     //侧边栏
     sidebar: {
-      'currency': currencySidebar(),
-
+      'currency/': currencySidebar(),
+      'datetime/': datetimeSidebar(),
     },
 
     socialLinks: [
@@ -36,10 +39,11 @@ export default defineConfig({
 function currencySidebar(){
   return [
     {
-      text: 'Examples',
+      text: '货币',
       items: [
-        { text: 'Markdown Examples', link: '/markdown-examples' },
-        { text: 'Runtime API Examples', link: '/api-examples' }
+        { text: '基础概念', link: '/currency/basic' },
+        { text: '最佳实践', link: '/currency/best_practice' },
+        { text: '相关工具', link: '/currency/tools' },
       ]
     }
   ]
@@ -48,10 +52,11 @@ function currencySidebar(){
 function datetimeSidebar(){
   return [
     {
-      text: 'Examples',
+      text: '时间',
       items: [
-        { text: 'Markdown Examples', link: '/markdown-examples' },
-        { text: 'Runtime API Examples', link: '/api-examples' }
+        { text: '基础概念', link: '/datetime/basic' },
+        { text: '最佳实践', link: '/datetime/best_practice' },
+        { text: '相关工具', link: '/datetime/tools' },
       ]
     }
   ]
