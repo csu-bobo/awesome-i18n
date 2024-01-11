@@ -33,8 +33,9 @@ long sevenDaysLater = CalendarUtil.addDate(cityId, System.currentTimeMillis(), 0
 
 3、**【强制】** 必须要保证时区数据库是最新版本。
 
-- 解释：时区数据库是旧版本可能导致时间计算和展示出错。
-- 最新时区版本可从https://www.iana.org/time-zones 获取，时区变更新闻可从https://github.com/eggert/tz/blob/main/NEWS查看。
+> 解释：时区数据库是旧版本可能导致时间计算和展示出错。
+>
+> 最新时区版本可从https://www.iana.org/time-zones 获取，时区变更新闻可从https://github.com/eggert/tz/blob/main/NEWS查看。
 
 ### 存储
 
