@@ -6,6 +6,7 @@
 ISO4217 定义了三个字母的货币代码，例如 USD 表示美元。此标准还定义了每个货币的小数点位置和格式等信息。
 
 [ISO 4217的官方链接](https://www.iso.org/iso-4217-currency-codes.html)
+
 [维基百科链接](https://zh.wikipedia.org/zh-hans/ISO_4217)
 
 ### 2. ISO 10916 货币金额表示法

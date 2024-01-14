@@ -21,12 +21,14 @@ export default defineConfig({
     nav: [
       { text: '货币', link: '/currency/basic' },
       { text: '时间', link: '/datetime/basic' },
+      { text: '电话', link: '/phone/basic' },
     ],
 
     //侧边栏
     sidebar: {
       'currency/': currencySidebar(),
       'datetime/': datetimeSidebar(),
+      'phone/': phoneSidebar(),
     },
 
     socialLinks: [
@@ -57,6 +59,34 @@ function datetimeSidebar(){
         { text: '基础概念', link: '/datetime/basic' },
         { text: '最佳实践', link: '/datetime/best_practice' },
         { text: '相关工具', link: '/datetime/tools' },
+        { text: '代码学习', 
+          items: [
+            { text: 'java时间', link: '/datetime/code_study/java_time' },
+            { text: 'go时间', link: '/datetime/code_study/go_time' },
+            { text: 'icu4j日历类', link: '/datetime/code_study/icu_calendar' },
+            { text: 'iana时区数据', link: '/datetime/code_study/iana_tzdata' },
+          ]
+        },
+      ]
+    }
+  ]
+}
+
+function phoneSidebar(){
+  return [
+    {
+      text: '电话',
+      items: [
+        { text: '基础概念', link: '/phone/basic' },
+        { text: '最佳实践', link: '/phone/best_practice' },
+        { text: '相关工具', link: '/phone/tools' },
+        { text: '代码学习', 
+          items: [
+            { text: 'libphone库代码', link: '/phone/code_study/libphone' },
+            { text: 'libphone库元数据', link: '/phone/code_study/libphone_metadata' },
+
+          ]
+        },
       ]
     }
   ]
