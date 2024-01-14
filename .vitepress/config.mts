@@ -63,7 +63,7 @@ function datetimeSidebar(){
           items: [
             { text: 'java时间', link: '/datetime/code_study/java_time' },
             { text: 'go时间', link: '/datetime/code_study/go_time' },
-            { text: 'icu4j日历类', link: '/datetime/code_study/icu_calendar' },
+            { text: 'icu4j日历类', link: '/datetime/code_study/icu4j_calendar' },
             { text: 'iana时区数据', link: '/datetime/code_study/iana_tzdata' },
           ]
         },
