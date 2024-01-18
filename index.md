@@ -6,13 +6,16 @@ hero:
   name: "awesome-i18n"
   text: 
   tagline: 旨在收集和分享出海i18n相关的一些领域知识和技术工具。 
-  actions:
-    - theme: brand
-      text: 货币
-      link: /currency/basic
-    - theme: alt
-      text: 时间
-      link: /datetime/basic
+  # actions:
+  #   - theme: brand
+  #     text: i18n元素
+  #     link: /currency/basic
+  #   - theme: brand
+  #     text: 相关标准
+  #     link: /standard/readme
+  #   - theme: brand
+  #     text: 开源项目
+  #     link: /open_source_project/readme
 
 features:
   - title: I18N(internationalization)-国际化能力

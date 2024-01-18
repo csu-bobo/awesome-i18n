@@ -19,9 +19,16 @@ export default defineConfig({
     //首页最上边的导航栏
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: '货币', link: '/currency/basic' },
-      { text: '时间', link: '/datetime/basic' },
-      { text: '电话', link: '/phone/basic' },
+      { 
+        text: 'i18n元素', 
+        items: [
+          { text: '货币', link: '/currency/basic' },
+          { text: '时间', link: '/datetime/basic' },
+          { text: '电话', link: '/phone/basic' },
+        ]
+      },
+      { text: '相关标准', link: '/standard/readme' },
+      { text: '开源项目', link: '/open_source_project/readme' },
     ],
 
     //侧边栏
@@ -29,6 +36,9 @@ export default defineConfig({
       'currency/': currencySidebar(),
       'datetime/': datetimeSidebar(),
       'phone/': phoneSidebar(),
+      'standard/': standardSidebar(),
+      'open_source_project/': projectSidebar(),
+      
     },
 
     socialLinks: [
@@ -87,6 +97,38 @@ function phoneSidebar(){
 
           ]
         },
+      ]
+    }
+  ]
+}
+
+function standardSidebar(){
+  return [
+    {
+      text: '标准',
+      items: [
+        { text: 'ISO标准', link: '/standard/iso' },
+        { text: 'BCP47标准', link: '/standard/bcp47' },
+        { text: '时区标准', link: '/standard/iana' },
+      ]
+    }
+  ]
+}
+
+function projectSidebar(){
+  return [
+    {
+      text: '开源项目',
+      items: [
+        { text: 'CLDR', link: '/open_source_project/cldr/basic' },
+        { text: 'ICU', 
+          items: [
+            { text: '基础信息', link: '/open_source_project/icu/basic' },
+            { text: 'locale', link: '/open_source_project/icu/locale' },
+            { text: 'ICU4J日历类学习', link: '/open_source_project/icu/icu4j_calendar' },
+          ]
+        },
+        { text: 'libphonenumber', link: '/open_source_project/libphonenumber/readme'},
       ]
     }
   ]
