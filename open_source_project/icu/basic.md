@@ -10,4 +10,8 @@ ICU是一个开源的C/C++、java类库，提供unicode和全球化支持。
 
 [icu官网](https://github.com/unicode-org/icu) 
 
-[icu文档](https://unicode-org.github.io/icu/) |
+[icu文档](https://unicode-org.github.io/icu/) 
+
+## 相关工具
+
+https://icu4c-demos.unicode.org/icu-bin/locexp?_=zh_CN

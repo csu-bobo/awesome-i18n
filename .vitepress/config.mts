@@ -108,6 +108,7 @@ function standardSidebar(){
       text: '标准',
       items: [
         { text: 'ISO标准', link: '/standard/iso' },
+        { text: 'unicode标准', link: '/standard/unicode' },
         { text: 'BCP47标准', link: '/standard/bcp47' },
         { text: '时区标准', link: '/standard/iana' },
       ]
@@ -125,7 +126,8 @@ function projectSidebar(){
           items: [
             { text: '基础信息', link: '/open_source_project/icu/basic' },
             { text: 'locale', link: '/open_source_project/icu/locale' },
-            { text: 'ICU4J日历类学习', link: '/open_source_project/icu/icu4j_calendar' },
+            { text: 'ICU4J日历类', link: '/open_source_project/icu/icu4j_calendar' },
+            { text: 'ICU4J数字格式化', link: '/open_source_project/icu/icu4j_NumberFormatter' },
           ]
         },
         { text: 'libphonenumber', link: '/open_source_project/libphonenumber/readme'},
