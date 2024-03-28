@@ -18,3 +18,6 @@ UTS #35 提供了有关如何表示这些信息的规范，以及如何在不同
 ### 双向文本算法
 
 https://www.unicode.org/reports/tr9/
+
+### 语言单复数规则
+https://www.unicode.org/cldr/cldr-aux/charts/29/supplemental/language_plural_rules.html

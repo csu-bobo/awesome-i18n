@@ -25,6 +25,7 @@ export default defineConfig({
           { text: '货币', link: '/currency/basic' },
           { text: '时间', link: '/datetime/basic' },
           { text: '电话', link: '/phone/basic' },
+          { text: '翻译', link: '/translation/basic' },
         ]
       },
       { text: '相关标准', link: '/standard/readme' },
@@ -36,6 +37,7 @@ export default defineConfig({
       'currency/': currencySidebar(),
       'datetime/': datetimeSidebar(),
       'phone/': phoneSidebar(),
+      'translation/': translationSidebar(),
       'standard/': standardSidebar(),
       'open_source_project/': projectSidebar(),
       
@@ -47,6 +49,18 @@ export default defineConfig({
     
   }
 })
+
+function translationSidebar(){
+  return [
+    {
+      text: '翻译',
+      items: [
+        { text: '基础概念', link: '/translation/basic' },
+        { text: '单复数', link: '/translation/plural_rule' },
+      ]
+    }
+  ]
+}
 
 function currencySidebar(){
   return [
