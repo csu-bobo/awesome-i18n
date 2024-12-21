@@ -57,6 +57,7 @@ function translationSidebar(){
       items: [
         { text: '基础概念', link: '/translation/basic' },
         { text: '单复数', link: '/translation/plural_rule' },
+        { text: '最佳实践', link: '/translation/best_practice' },
       ]
     }
   ]
