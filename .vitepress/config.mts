@@ -22,6 +22,7 @@ export default defineConfig({
       { 
         text: 'i18n元素', 
         items: [
+          { text: '国家', link: '/country/basic' },
           { text: '货币', link: '/currency/basic' },
           { text: '时间', link: '/datetime/basic' },
           { text: '电话', link: '/phone/basic' },
@@ -34,6 +35,7 @@ export default defineConfig({
 
     //侧边栏
     sidebar: {
+      'country/': countrySidebar(),
       'currency/': currencySidebar(),
       'datetime/': datetimeSidebar(),
       'phone/': phoneSidebar(),
@@ -58,6 +60,19 @@ function translationSidebar(){
         { text: '基础概念', link: '/translation/basic' },
         { text: '单复数', link: '/translation/plural_rule' },
         { text: '最佳实践', link: '/translation/best_practice' },
+      ]
+    }
+  ]
+}
+
+function countrySidebar(){
+  return [
+    {
+      text: '货币',
+      items: [
+        { text: '基础概念', link: '/country/basic' },
+        { text: '最佳实践', link: '/country/best_practice' },
+
       ]
     }
   ]
