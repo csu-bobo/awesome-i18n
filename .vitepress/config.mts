@@ -23,6 +23,7 @@ export default defineConfig({
         text: 'i18n元素', 
         items: [
           { text: '国家', link: '/country/basic' },
+          { text: '城市', link: '/city/basic' },
           { text: '货币', link: '/currency/basic' },
           { text: '时间', link: '/datetime/basic' },
           { text: '电话', link: '/phone/basic' },
@@ -36,6 +37,7 @@ export default defineConfig({
     //侧边栏
     sidebar: {
       'country/': countrySidebar(),
+      'city/': citySidebar(),
       'currency/': currencySidebar(),
       'datetime/': datetimeSidebar(),
       'phone/': phoneSidebar(),
@@ -68,11 +70,24 @@ function translationSidebar(){
 function countrySidebar(){
   return [
     {
-      text: '货币',
+      text: '国家',
       items: [
         { text: '基础概念', link: '/country/basic' },
         { text: '最佳实践', link: '/country/best_practice' },
+        { text: '相关工具', link: '/country/tools' },
+      ]
+    }
+  ]
+}
 
+function citySidebar(){
+  return [
+    {
+      text: '城市',
+      items: [
+        { text: '基础概念', link: '/city/basic' },
+        { text: '最佳实践', link: '/city/best_practice' },
+        // { text: '相关工具', link: '/city/tools' },
       ]
     }
   ]
