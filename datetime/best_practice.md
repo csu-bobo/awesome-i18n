@@ -12,7 +12,8 @@ https://zh.wikipedia.org/wiki/ISO_8601
 
 1、**【建议】** 客户端用户录入时间时，需保存时间字符串+时区信息（可用cityId或者timezone）。录入之后，要么直接将时间字符串和时区传递给服务端，要么端上转换为时间戳传递给服务端。
 
-2、**【建议】** 服务端生成时间时，可以直接生成时间戳
+
+2、**【建议】** 服务端生成时间时，可以直接生成时间戳。
 
 ### 计算
 
@@ -39,13 +40,13 @@ long sevenDaysLater = CalendarUtil.addDate(cityId, System.currentTimeMillis(), 0
 
 ### 存储
 
-1、**【建议】** 存储过去和现在的时间，要么存储时间戳，要么存储时间字符串加时区信息。比如mysql中存为timestamp就是时间戳，存为datetime就是时间字符串加默认时区东八区。
+1、**【强制】** 存储【时间戳+时区信息】，或【时间字符串+时区信息】。
+> **时间戳**：在数据库中，可以存为bigint、timestamp、datetime，只要最后在代码中能转成时间戳就行。比如mysql中存为timestamp就是时间戳，存为datetime就是时间字符串加默认时区东八区。
+> 
+> **规则配置类**的场景，可以存储统一格式的时间字符串。
+> 比如商家营业时间设置为周一到周五8:00-23:00,周六周日10:00-22:00，可以录入这种标准字符串。实际计算时再基于时间字符串+时区信息（商家所属城市时区）转换为时间戳。
 
-2、**【建议】** 存储未来时间，会比较麻烦，存储时间戳的话，由于夏令时调整，对应的时间字符串可能会变化。
-
-因此建议存储时间字符串，加时区属性，并尽可能避开夏令时调整的时候（因为可能某一天没有1:30，也有可能有2个1:30）。
-
-3、**【强制】** 存储时区应该使用cityId或者时区完整名称（如Asia/Shanghai、Asia/Hong_Kong）。不建议使用utc_offset、简写格式（如CST）、UTC+8、GMT+8等格式。
+2、**【强制】** 存储时区应该使用cityId或者时区完整名称（如Asia/Shanghai、Asia/Hong_Kong）。不建议使用utc_offset、简写格式（如CST）、UTC+8、GMT+8等格式。
 
 - utc_offset就是当地时间与协调世界时（UTC）之间的时间差（比如东八区就是+480分钟）。在夏令时切换后会变化，一个订单的开始、结束时间的utc_offset可能都会不同。
 - 时区简写方式会出现冲突, 比如 CST 不同平台上表示的含义不一样
@@ -60,6 +61,11 @@ long sevenDaysLater = CalendarUtil.addDate(cityId, System.currentTimeMillis(), 0
 TimeZone timeZone = TimeZone.getTimeZone("GMT-8");
 TimeZone timeZone = TimeZone.getTimeZone("CST");
 ```
+
+3、**【建议】** 存储未来时间，会比较麻烦，存储时间戳的话，由于夏令时调整，对应的时间字符串可能会变化。
+
+因此建议存储时间字符串，加时区属性，并尽可能避开夏令时调整的时候（因为可能某一天没有1:30，也有可能有2个1:30）。
+
 
 ### 传递
 
