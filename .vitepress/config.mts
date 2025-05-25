@@ -27,6 +27,7 @@ export default defineConfig({
           { text: '货币', link: '/currency/basic' },
           { text: '时间', link: '/datetime/basic' },
           { text: '电话', link: '/phone/basic' },
+          { text: '节假日', link: '/holiday/basic' },
           { text: '翻译', link: '/translation/basic' },
         ]
       },
@@ -42,6 +43,7 @@ export default defineConfig({
       'currency/': currencySidebar(),
       'datetime/': datetimeSidebar(),
       'phone/': phoneSidebar(),
+      'holiday/':holidaySidebar(),
       'translation/': translationSidebar(),
       'standard/': standardSidebar(),
       'open_source_project/': projectSidebar(),
@@ -143,6 +145,19 @@ function phoneSidebar(){
 
           ]
         },
+      ]
+    }
+  ]
+}
+
+function holidaySidebar(){
+  return [
+    {
+      text: '城市',
+      items: [
+        { text: '基础概念', link: '/holiday/basic' },
+        // { text: '最佳实践', link: '/holiday/best_practice' },
+        { text: '相关工具', link: '/holiday/tools' },
       ]
     }
   ]
