@@ -12,6 +12,8 @@ ICU是一个开源的C/C++、java类库，提供unicode和全球化支持。
 
 [icu文档](https://unicode-org.github.io/icu/) 
 
+[icu-data](https://github.com/unicode-org/icu-data/tree/main/tzdata/icunew) 包含时区数据库
+
 ## 相关工具
 
 https://icu4c-demos.unicode.org/icu-bin/locexp?_=zh_CN
