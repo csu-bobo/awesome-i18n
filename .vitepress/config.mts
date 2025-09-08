@@ -34,6 +34,7 @@ export default defineConfig({
       { text: '相关标准', link: '/standard/readme' },
       { text: '开源项目', link: '/open_source_project/readme' },
       { text: '相关数据', link: '/metadata/metadata' },
+      { text: '代码扫描', link: '/code_scan/rules' },
     ],
 
     //侧边栏
