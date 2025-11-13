@@ -159,6 +159,7 @@ function holidaySidebar(){
         { text: '基础概念', link: '/holiday/basic' },
         // { text: '最佳实践', link: '/holiday/best_practice' },
         { text: '相关工具', link: '/holiday/tools' },
+        { text: '一些国家的节假日规则', link: '/holiday/rules' },
       ]
     }
   ]
