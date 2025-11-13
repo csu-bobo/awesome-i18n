@@ -35,6 +35,12 @@ TimezoneDB是一个提供时区数据库和API服务的平台
 
 链接：https://timezonedb.com/download
 
+### 4.时区查看网站
+https://nodatime.org/TimeZones 
+
+### 5.java jdk时区升级工具
+https://www.azul.com/products/components/ziupdater-time-zone-tool/
+
 **api工具**
 
 https://timezonedb.com/api
