@@ -126,4 +126,25 @@ GCC六国+新加坡：分为固定节假日和时间不固定的伊斯兰历节�
 
 周末：周六周日
 
-数据源：https://www.in.gov.br/en/web/dou/-/portaria-mgi-n-9.783-de-27-de-dezembro-de-2024-604395869
+数据源1：https://www.in.gov.br/en/web/dou/-/portaria-mgi-n-9.783-de-27-de-dezembro-de-2024-604395869
+
+数据源2：https://www.planalto.gov.br/ccivil_03/leis/2002/l10607.htm
+
+| 节假日中文名称 | 英文名称 | 日期 | 备注 |
+| --- | --- | --- | --- |
+| 元旦 |  | 1月1日 |  |
+| 狂欢节 | Carnival |  | 可选假日 |
+| 圣灰星期三 | Carnival end |  | 下午 2 点前可选择放假 |
+| 耶稣受难日 | Good Friday |  |  |
+| 蒂拉登特斯 | Tiradentes | 4月21日 |  |
+| 劳动节 | Labor Day | 5月1日 |  |
+| 圣体节 | Corpus Christi |  | 可选假日 |
+| 独立日 | Independence Day | 9月7日 |  |
+| 阿帕雷西达圣母节 | Our Lady of Aparecida |  |  |
+| 联邦公务员日 | Public Service Day |  | 可选假日 |
+| 诸圣节 |  | 11月2日 |  |
+| 共和国宣言日 |  | 11月15日 |  |
+| 黑人觉醒日 | Black Awakeness Day |  |  |
+| 平安夜 |  |  | 可选假日 |
+| 圣诞节 | Christmas Day | 12月25日 |  |
+| 除夕夜 | New Year's Eve | 12月31日 | 可选假日 |
