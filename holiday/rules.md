@@ -125,3 +125,5 @@ GCC六国+新加坡：分为固定节假日和时间不固定的伊斯兰历节�
 ### 5、巴西
 
 周末：周六周日
+
+数据源：https://www.in.gov.br/en/web/dou/-/portaria-mgi-n-9.783-de-27-de-dezembro-de-2024-604395869
