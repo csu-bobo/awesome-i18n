@@ -7,20 +7,20 @@ export default defineConfig({
   base: '/awesome-i18n/',
 
   themeConfig: {
-     // 启用内置搜索框
-     search: {
+    // 启用内置搜索框
+    search: {
       provider: 'local'
     },
     //网站的标题
     siteTitle: 'awesome-i18n',
     // 页面右侧显示的标题级别
-    outline:[1, 3],
+    outline: [1, 3],
 
     //首页最上边的导航栏
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { 
-        text: 'i18n元素', 
+      {
+        text: 'i18n元素',
         items: [
           { text: '国家', link: '/country/basic' },
           { text: '城市', link: '/city/basic' },
@@ -33,7 +33,9 @@ export default defineConfig({
       },
       { text: '相关标准', link: '/standard/readme' },
       { text: '开源项目', link: '/open_source_project/readme' },
-      { text: '相关数据', link: '/metadata/metadata' },
+      {
+        text: '相关数据', link: '/metadata/metadata',
+      },
       { text: '代码扫描', link: '/code_scan/rules' },
     ],
 
@@ -44,21 +46,21 @@ export default defineConfig({
       'currency/': currencySidebar(),
       'datetime/': datetimeSidebar(),
       'phone/': phoneSidebar(),
-      'holiday/':holidaySidebar(),
+      'holiday/': holidaySidebar(),
       'translation/': translationSidebar(),
       'standard/': standardSidebar(),
       'open_source_project/': projectSidebar(),
-      
+      'metadata/': metaDataSidebar(),
     },
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
     ],
-    
+
   }
 })
 
-function translationSidebar(){
+function translationSidebar() {
   return [
     {
       text: '翻译',
@@ -71,7 +73,7 @@ function translationSidebar(){
   ]
 }
 
-function countrySidebar(){
+function countrySidebar() {
   return [
     {
       text: '国家',
@@ -84,7 +86,7 @@ function countrySidebar(){
   ]
 }
 
-function citySidebar(){
+function citySidebar() {
   return [
     {
       text: '城市',
@@ -97,7 +99,7 @@ function citySidebar(){
   ]
 }
 
-function currencySidebar(){
+function currencySidebar() {
   return [
     {
       text: '货币',
@@ -110,7 +112,7 @@ function currencySidebar(){
   ]
 }
 
-function datetimeSidebar(){
+function datetimeSidebar() {
   return [
     {
       text: '时间',
@@ -118,7 +120,8 @@ function datetimeSidebar(){
         { text: '基础概念', link: '/datetime/basic' },
         { text: '最佳实践', link: '/datetime/best_practice' },
         { text: '相关工具', link: '/datetime/tools' },
-        { text: '代码学习', 
+        {
+          text: '代码学习',
           items: [
             { text: 'java时间', link: '/datetime/code_study/java_time' },
             { text: 'go时间', link: '/datetime/code_study/go_time' },
@@ -131,7 +134,7 @@ function datetimeSidebar(){
   ]
 }
 
-function phoneSidebar(){
+function phoneSidebar() {
   return [
     {
       text: '电话',
@@ -139,7 +142,8 @@ function phoneSidebar(){
         { text: '基础概念', link: '/phone/basic' },
         { text: '最佳实践', link: '/phone/best_practice' },
         { text: '相关工具', link: '/phone/tools' },
-        { text: '代码学习', 
+        {
+          text: '代码学习',
           items: [
             { text: 'libphone库代码', link: '/phone/code_study/libphone' },
             { text: 'libphone库元数据', link: '/phone/code_study/libphone_metadata' },
@@ -151,7 +155,7 @@ function phoneSidebar(){
   ]
 }
 
-function holidaySidebar(){
+function holidaySidebar() {
   return [
     {
       text: '城市',
@@ -167,7 +171,7 @@ function holidaySidebar(){
   ]
 }
 
-function standardSidebar(){
+function standardSidebar() {
   return [
     {
       text: '标准',
@@ -181,13 +185,26 @@ function standardSidebar(){
   ]
 }
 
-function projectSidebar(){
+function metaDataSidebar() {
+  return [
+    {
+      text: '相关数据',
+      items: [
+        { text: '基础元素', link: '/metadata/metadata' },
+        { text: '时间格式', link: '/metadata/datetime' },
+
+      ]
+    }
+  ]
+}
+function projectSidebar() {
   return [
     {
       text: '开源项目',
       items: [
         { text: 'CLDR', link: '/open_source_project/cldr/basic' },
-        { text: 'ICU', 
+        {
+          text: 'ICU',
           items: [
             { text: '基础信息', link: '/open_source_project/icu/basic' },
             { text: 'locale', link: '/open_source_project/icu/locale' },
@@ -195,7 +212,7 @@ function projectSidebar(){
             { text: 'ICU4J数字格式化', link: '/open_source_project/icu/icu4j_NumberFormatter' },
           ]
         },
-        { text: 'libphonenumber', link: '/open_source_project/libphonenumber/readme'},
+        { text: 'libphonenumber', link: '/open_source_project/libphonenumber/readme' },
       ]
     }
   ]
