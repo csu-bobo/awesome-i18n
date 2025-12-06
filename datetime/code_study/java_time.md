@@ -174,19 +174,45 @@ LocalDate date = LocalDate.of(2022, 1, 1);  // 1代表一月
 
 表示一个日期（年/月/日），没有时间的部分，也没有时区（使用系统默认时区）。例如，可以使用它来存储生日或者纪念日。
 
-```
+```java
+// 核心字段 年月日
+private final int year;
+private final short month;
+private final short day;
+
+// 初始化
 LocalDate date = LocalDate.now(); // 获取当前日期
 LocalDate birthday = LocalDate.of(1990, Month.JANUARY, 1); // 创建一个指定日期
 
+// 获取信息	
+getYear() / getMonthValue() / getDayOfMonth()	获取年、月（1-12）、日。
+getDayOfWeek()	获取星期几（DayOfWeek 枚举，如 MONDAY）。
+getDayOfYear()	获取一年中的第几天。
+isLeapYear()	判断是否是闰年。
+
+//格式转换	
+format(DateTimeFormatter formatter)	//按格式化为字符串
 ```
 
 ### （2）LocalTime
 
 表示一天中的某个时间（小时/分钟/秒），没有日期部分，也没有时区（使用系统默认时区）。
 
-```
-LocalTime time = LocalTime.now(); // 获取当前时间
-LocalTime midnight = LocalTime.MIDNIGHT; // 获取午夜时间
+```java
+// 核心字段：时分秒、纳秒
+private final byte hour;
+private final byte minute;
+private final byte second;
+private final int nano;
+
+// 初始化
+LocalTime time = LocalTime.of(1,2,50);
+parse("10:15:30"); // 从标准格式 (HH:mm:ss) 字符串解析
+
+// 获取时间信息
+getHour() / getMinute() / getSecond()	//获取时、分、秒。
+getNano()	//获取纳秒。
+toSecondOfDay()	//返回从午夜到此刻的总秒数 (0-86399)
 
 ```
 

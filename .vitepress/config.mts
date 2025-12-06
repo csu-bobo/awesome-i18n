@@ -125,6 +125,7 @@ function datetimeSidebar() {
           items: [
             { text: 'java时间', link: '/datetime/code_study/java_time' },
             { text: 'go时间', link: '/datetime/code_study/go_time' },
+            { text: 'MySQL时间', link: '/datetime/code_study/mysql_time' },
             { text: 'icu4j日历类', link: '/datetime/code_study/icu4j_calendar' },
             { text: 'iana时区数据', link: '/datetime/code_study/iana_tzdata' },
           ]
@@ -158,12 +159,12 @@ function phoneSidebar() {
 function holidaySidebar() {
   return [
     {
-      text: '城市',
+      text: '节假日',
       items: [
         { text: '基础概念', link: '/holiday/basic' },
-        // { text: '最佳实践', link: '/holiday/best_practice' },
+        { text: '节假日接口设计', link: 'holiday/design.md' },
         { text: '相关工具', link: '/holiday/tools' },
-        { text: '一些国家的节假日规则', link: '/holiday/rules' },
+        { text: '一些国家的节假日示例', link: '/holiday/example' },
         { text: '斋月和开斋节', link: '/holiday/ramadan' },
         { text: '祷告时间', link: '/holiday/prayer_times' },
       ]

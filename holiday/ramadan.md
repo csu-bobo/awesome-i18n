@@ -1,6 +1,32 @@
 # 伊斯兰教-斋月和开斋节
 ## 一、简介
 
+```mermaid
+timeline
+    title 伊斯兰历斋月
+    1-8月 : 每个月有29/30天
+        : 8.29观察新月
+    9月 : 斋月
+         : 每天祷告、封斋、慈善
+         : 9.29天观察现新月
+    10-12月 : 10月1是开斋节
+            : 2-3天开斋节假期
+```
+
+```mermaid
+timeline
+    title 伊斯兰历斋月每天
+    晨礼前 : 吃封斋饭
+    晨礼(约5点) : 祷告
+         : 开始禁食
+    晌礼 : 祷告  
+    晡礼 : 祷告  
+    昏礼(约18点) : 日落
+            : 祷告
+            : 开斋吃饭
+    宵礼 : 祷告
+```
+
 ### 斋月
 
 斋月是穆斯林禁食和祷告的月份（非节日或假日），是在伊斯兰历的第九个月，历时整整一个月。
@@ -48,3 +74,53 @@
 
 - 许多国家和地区（尤其是海湾合作委员会GCC国家）会遵循某个权威的宣布。传统上，许多地方会遵从**沙特阿拉伯**的官方宣布，因为沙特是伊斯兰教两大圣地的所在地。
 - 但是，每个国家都拥有自主决定权，因此有时会出现沙特宣布开始，而其他国家因本地未观测到而次日才开始的情况。
+
+## 三、斋月相关的接口和库表设计
+
+### 1、需要的接口
+
+- 根据国家获取斋月开始、结束日期
+- 根据城市，获取每天的5次祷告时间
+- 根据城市，获取斋月期间每天封斋和开斋的时间（可复用第2个接口，因为晨礼时间=封斋时间，昏礼时间=开斋时间）
+
+### 2、库表设计
+
+斋月日期信息表ramadan_date
+
+```sql
+CREATE TABLE `ramadan_date` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+  `region` varchar(5) NOT NULL DEFAULT '' COMMENT '国家二字母码（ISO 3166-1 alpha-2）',
+  `islamic_year` int(4) NOT NULL DEFAULT '0' COMMENT '伊斯兰历年（如：1446）',
+  `start_date` date NOT NULL DEFAULT '1970-01-01' COMMENT '斋月开始公历日期',
+  `end_date` date NOT NULL DEFAULT '1970-01-01' COMMENT '斋月结束公历日期',
+  `ctime` bigint(20) NOT NULL DEFAULT '0' COMMENT '创建时间（Unix毫秒时间戳）',
+  `utime` bigint(20) NOT NULL DEFAULT '0' COMMENT '更新时间（Unix毫秒时间戳）',
+  `operator` varchar(64) NOT NULL DEFAULT '' COMMENT '更新人',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_region_islamic_year` (`region`,`islamic_year`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='斋月起止日期记录表'
+```
+
+祷告时间表prayer_times
+
+```sql
+CREATE TABLE `prayer_times` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+  `region` varchar(5) NOT NULL DEFAULT '' COMMENT '国家二字母码（ISO 3166-1 alpha-2）',
+  `city_id` bigint(20) NOT NULL DEFAULT '0' COMMENT '城市id',
+  `gregorian_date` date NOT NULL DEFAULT '1970-01-01' COMMENT '公历日期',
+  `fajr` TIME NOT NULL DEFAULT '00:00:00' COMMENT '晨礼时间',
+  `sunrise` TIME NOT NULL DEFAULT '00:00:00' COMMENT '日出时间',
+  `dhuhr` TIME NOT NULL DEFAULT '00:00:00' COMMENT '晌礼时间',
+  `asr` TIME NOT NULL DEFAULT '00:00:00' COMMENT '晡礼时间',
+  `maghrib` TIME NOT NULL DEFAULT '00:00:00' COMMENT '昏礼时间（日落时间）',
+  `isha` TIME NOT NULL DEFAULT '00:00:00' COMMENT '宵礼时间',
+  `ctime` bigint(20) NOT NULL DEFAULT '0' COMMENT '创建时间（Unix毫秒时间戳）',
+  `utime` bigint(20) NOT NULL DEFAULT '0' COMMENT '更新时间（Unix毫秒时间戳）',
+  `operator` varchar(64) NOT NULL DEFAULT '' COMMENT '更新人',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uniq_city_id_date` (`city_id`,`gregorian_date`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+```
+
